@@ -20,6 +20,6 @@ public interface UserDao extends BaseMapper<User> {
     List<User> getAll();
     @Select("select * from user where user_username = #{username}")
     User loadUserByUsername(String username);
-    @Select("select r.* from role r,user u where u.user_id = #{userId} and u.user_id = r.role_id")
+    @Select("select r.* from role r,user u,user_role ur where u.user_id = #{username} and u.user_id = ur.user_id and r.role_id = ur.role_id")
     List<Role> getRolesByUserId(Long userId);
 }
