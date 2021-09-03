@@ -1,5 +1,6 @@
 package com.msun.admin.dao;
 
+import com.msun.admin.entity.po.Role;
 import com.msun.admin.entity.po.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,4 +20,6 @@ public interface UserDao extends BaseMapper<User> {
     List<User> getAll();
     @Select("select * from user where user_username = #{username}")
     User loadUserByUsername(String username);
+    @Select("select r.* from role r,user u where u.user_id = #{userId} and u.user_id = r.role_id")
+    List<Role> getRolesByUserId(Long userId);
 }
