@@ -1,6 +1,6 @@
 package com.msun.admin.service.impl;
 
-import com.msun.admin.entity.dto.PermissionDto;
+import com.msun.admin.entity.dto.PermissionWithRolesDto;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,7 +38,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionDao, Permission
     }
 
     @Override
-    public List<PermissionDto> getAllPermissionsWithRoles() {
+    public List<PermissionWithRolesDto> getAllPermissionsWithRoles() {
         return permissionDao.getAllPermissionsWithRoles();
     }
 

@@ -2,7 +2,7 @@ package com.msun.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.msun.admin.common.utils.PageUtils;
-import com.msun.admin.entity.dto.PermissionDto;
+import com.msun.admin.entity.dto.PermissionWithRolesDto;
 import com.msun.admin.entity.po.Permission;
 
 import java.util.Map;
@@ -21,7 +21,7 @@ public interface IPermissionService extends IService<Permission> {
 
     List<Permission> getAll();
 
-    List<PermissionDto> getAllPermissionsWithRoles();
+    List<PermissionWithRolesDto> getAllPermissionsWithRoles();
 
 }
 

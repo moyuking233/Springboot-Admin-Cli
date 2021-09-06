@@ -19,7 +19,7 @@
             <result property="gmtCreateMan" column="gmt_create_man" jdbcType="INTEGER"/>
             <result property="isDeleted" column="is_deleted" jdbcType="BOOLEAN"/>
     </resultMap>
-    <resultMap id="PermissionWithRolesResultMap" type="com.msun.admin.entity.dto.PermissionDto" extends="BaseResultMap">
+    <resultMap id="PermissionWithRolesResultMap" type="com.msun.admin.entity.dto.PermissionWithRolesDto" extends="BaseResultMap">
         <collection property="roles" ofType="com.msun.admin.entity.po.Role" >
             <result column="role_name" property="roleName" jdbcType="VARCHAR" />
         </collection>

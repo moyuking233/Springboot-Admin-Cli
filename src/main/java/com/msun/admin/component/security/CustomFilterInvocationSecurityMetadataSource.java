@@ -1,7 +1,6 @@
 package com.msun.admin.component.security;
 
-import com.msun.admin.entity.dto.PermissionDto;
-import com.msun.admin.entity.po.Permission;
+import com.msun.admin.entity.dto.PermissionWithRolesDto;
 import com.msun.admin.entity.po.Role;
 import com.msun.admin.service.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +27,8 @@ public class CustomFilterInvocationSecurityMetadataSource implements FilterInvoc
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
         String requestUrl = ((FilterInvocation) object).getRequestUrl();
-        List<PermissionDto> permissions = permissionService.getAllPermissionsWithRoles();
-        for (PermissionDto permission :
+        List<PermissionWithRolesDto> permissions = permissionService.getAllPermissionsWithRoles();
+        for (PermissionWithRolesDto permission :
                 permissions) {
             if (antPathMatcher.match(permission.getPermissionUrl(),requestUrl)){
                 List<Role> roles = permission.getRoles();

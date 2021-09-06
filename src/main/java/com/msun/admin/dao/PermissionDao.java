@@ -1,6 +1,6 @@
 package com.msun.admin.dao;
 
-import com.msun.admin.entity.dto.PermissionDto;
+import com.msun.admin.entity.dto.PermissionWithRolesDto;
 import com.msun.admin.entity.po.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,5 +19,5 @@ public interface PermissionDao extends BaseMapper<Permission> {
     @Select("select * from permission where is_deleted = 0")
     List<Permission> getAll();
 
-    List<PermissionDto> getAllPermissionsWithRoles();
+    List<PermissionWithRolesDto> getAllPermissionsWithRoles();
 }
