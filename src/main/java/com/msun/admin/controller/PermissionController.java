@@ -51,7 +51,6 @@ public class PermissionController {
     @ApiOperation(value="根据主键获取")
     public R info(@PathVariable("permissionId") Integer permissionId){
 		Permission permission = permissionService.getById(permissionId);
-
         return R.ok().put(permission);
     }
 

@@ -40,7 +40,6 @@ public class UserController {
     @ApiOperation(value="按页获取",notes = "第一个参数page表示第几页，第二个参数limit表示每页几条记录")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = userService.queryPage(params);
-
         return R.ok().put(page);
     }
 
@@ -52,7 +51,6 @@ public class UserController {
     @ApiOperation(value="根据主键获取")
     public R info(@PathVariable("userId") Long userId){
 		User user = userService.getById(userId);
-
         return R.ok().put(user);
     }
 

@@ -41,7 +41,6 @@ public class RoleController {
     @ApiOperation(value="按页获取",notes = "第一个参数page表示第几页，第二个参数limit表示每页几条记录")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = roleService.queryPage(params);
-
         return R.ok().put(page);
     }
 
@@ -53,7 +52,6 @@ public class RoleController {
     @ApiOperation(value="根据主键获取")
     public R info(@PathVariable("roleId") Integer roleId){
 		Role role = roleService.getById(roleId);
-
         return R.ok().put(role);
     }
 

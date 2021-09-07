@@ -97,7 +97,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                        将返回对象的密码置空
                         user.setUserPassword(null);
 
-                        R ok = R.ok("登录成功").put("data",user);
+                        R ok = R.ok("登录成功").put(user);
                         String s = new ObjectMapper().writeValueAsString(ok);
                         out.write(s);
                         out.flush();
