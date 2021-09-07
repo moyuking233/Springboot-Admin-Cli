@@ -29,6 +29,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <!--微服务依赖-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
