@@ -1,6 +1,6 @@
 import cn.hutool.crypto.digest.DigestAlgorithm;
 import cn.hutool.crypto.digest.Digester;
-import com.msun.admin.AdminApplication;
+import com.nga.admin.AdminApplication;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

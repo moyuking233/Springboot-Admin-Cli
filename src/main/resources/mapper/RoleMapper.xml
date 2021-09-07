@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.msun.admin.dao.RoleDao">
+<mapper namespace="com.nga.admin.dao.RoleDao">
 
-    <resultMap id="BaseResultMap" type="com.msun.admin.entity.po.Role">
+    <resultMap id="BaseResultMap" type="com.nga.admin.entity.po.Role">
             <id property="roleId" column="role_id" jdbcType="INTEGER"/>
             <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
             <result property="roleDesc" column="role_desc" jdbcType="VARCHAR"/>

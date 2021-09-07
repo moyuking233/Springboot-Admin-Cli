@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.msun.admin.dao.UserDao">
+<mapper namespace="com.nga.admin.dao.UserDao">
 
-    <resultMap id="BaseResultMap" type="com.msun.admin.entity.po.User">
+    <resultMap id="BaseResultMap" type="com.nga.admin.entity.po.User">
             <id property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="userUsername" column="user_username" jdbcType="VARCHAR"/>
             <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
