@@ -32,13 +32,6 @@ public class RolePermissionController {
     private IRolePermissionService rolePermissionService;
 
 
-    @GetMapping("/all")
-    @ApiOperation("获取全部")
-    public R getAll(){
-        return R.ok().put("data", rolePermissionService.getAll());
-    }
-
-
     /**
      * 列表
      */
@@ -47,7 +40,7 @@ public class RolePermissionController {
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = rolePermissionService.queryPage(params);
 
-        return R.ok().put("data", page);
+        return R.ok().put(page);
     }
 
 
@@ -59,7 +52,7 @@ public class RolePermissionController {
     public R info(@PathVariable("roleId") Integer roleId){
 		RolePermission rolePermission = rolePermissionService.getById(roleId);
 
-        return R.ok().put("data", rolePermission);
+        return R.ok().put(rolePermission);
     }
 
     /**

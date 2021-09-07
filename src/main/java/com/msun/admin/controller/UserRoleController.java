@@ -32,12 +32,6 @@ public class UserRoleController {
     private IUserRoleService userRoleService;
 
 
-    @GetMapping("/all")
-    @ApiOperation("获取全部")
-    public R getAll(){
-        return R.ok().put("data", userRoleService.getAll());
-    }
-
 
     /**
      * 列表
@@ -47,7 +41,7 @@ public class UserRoleController {
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = userRoleService.queryPage(params);
 
-        return R.ok().put("data", page);
+        return R.ok().put(page);
     }
 
 
@@ -59,7 +53,7 @@ public class UserRoleController {
     public R info(@PathVariable("userId") Long userId){
 		UserRole userRole = userRoleService.getById(userId);
 
-        return R.ok().put("data", userRole);
+        return R.ok().put(userRole);
     }
 
     /**

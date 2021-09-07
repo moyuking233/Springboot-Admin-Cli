@@ -32,12 +32,6 @@ public class PermissionController {
     private IPermissionService permissionService;
 
 
-    @GetMapping("/all")
-    @ApiOperation("获取全部")
-    public R getAll(){
-        return R.ok().put("data", permissionService.getAll());
-    }
-
 
     /**
      * 列表
@@ -46,8 +40,7 @@ public class PermissionController {
     @ApiOperation(value="按页获取",notes = "第一个参数page表示第几页，第二个参数limit表示每页几条记录")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = permissionService.queryPage(params);
-
-        return R.ok().put("data", page);
+        return R.ok().put(page);
     }
 
 
@@ -59,7 +52,7 @@ public class PermissionController {
     public R info(@PathVariable("permissionId") Integer permissionId){
 		Permission permission = permissionService.getById(permissionId);
 
-        return R.ok().put("data", permission);
+        return R.ok().put(permission);
     }
 
     /**

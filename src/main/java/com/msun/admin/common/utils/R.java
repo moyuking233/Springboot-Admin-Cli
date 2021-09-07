@@ -55,4 +55,9 @@ public class R extends HashMap<String, Object> {
         super.put(key, value);
         return this;
     }
+
+    public R put(Object value) {
+        super.put("data", value);
+        return this;
+    }
 }

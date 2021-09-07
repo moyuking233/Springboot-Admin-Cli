@@ -32,12 +32,6 @@ public class UserController {
     private IUserService userService;
 
 
-    @GetMapping("/all")
-    @ApiOperation("获取全部")
-    public R getAll(){
-        return R.ok().put("data", userService.getAll());
-    }
-
 
     /**
      * 列表
@@ -47,7 +41,7 @@ public class UserController {
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = userService.queryPage(params);
 
-        return R.ok().put("data", page);
+        return R.ok().put(page);
     }
 
 
@@ -59,7 +53,7 @@ public class UserController {
     public R info(@PathVariable("userId") Long userId){
 		User user = userService.getById(userId);
 
-        return R.ok().put("data", user);
+        return R.ok().put(user);
     }
 
     /**

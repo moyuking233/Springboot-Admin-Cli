@@ -32,11 +32,6 @@ public class RoleController {
     private IRoleService roleService;
 
 
-    @GetMapping("/all")
-    @ApiOperation("获取全部")
-    public R getAll(){
-        return R.ok().put("data", roleService.getAll());
-    }
 
 
     /**
@@ -47,7 +42,7 @@ public class RoleController {
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = roleService.queryPage(params);
 
-        return R.ok().put("data", page);
+        return R.ok().put(page);
     }
 
 
@@ -59,7 +54,7 @@ public class RoleController {
     public R info(@PathVariable("roleId") Integer roleId){
 		Role role = roleService.getById(roleId);
 
-        return R.ok().put("data", role);
+        return R.ok().put(role);
     }
 
     /**
