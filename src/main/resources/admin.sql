@@ -25,7 +25,6 @@ CREATE TABLE `permission`  (
   `permission_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '权限主键',
   `permission_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '允许放行的url',
   `permission_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '权限名',
-  `permission_parent_id` int(11) NULL DEFAULT NULL COMMENT '父权限id',
   `gmt_modified` datetime NULL DEFAULT NULL COMMENT '最后修改时间',
   `gmt_modified_man` int(11) NULL DEFAULT NULL COMMENT '最后修改用户所对应的id',
   `gmt_create` datetime NULL DEFAULT NULL COMMENT '创建时间',
@@ -37,8 +36,8 @@ CREATE TABLE `permission`  (
 -- ----------------------------
 -- Records of permission
 -- ----------------------------
-INSERT INTO `permission` VALUES (1, '/', '所有', NULL, '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
-INSERT INTO `permission` VALUES (2, '/**', '基本管理', 1, '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
+INSERT INTO `permission` VALUES (1, '/', '所有', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
+INSERT INTO `permission` VALUES (2, '/**', '基本管理', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
 
 -- ----------------------------
 -- Table structure for role

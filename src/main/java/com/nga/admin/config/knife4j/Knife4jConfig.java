@@ -3,6 +3,7 @@ package com.nga.admin.config.knife4j;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,20 +25,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@ConfigurationProperties("swagger")
 @Data
 @Slf4j
 @EnableKnife4j
 @EnableSwagger2WebMvc
 public class Knife4jConfig {
+    @Value("${server.port}")
+    String port;
+    @Value("${swagger.title}")
     String title;
+    @Value("${swagger.description}")
     String description;
+    @Value("${swagger.version}")
     String version;
+    @Value("${swagger.termsOfServiceUrl}")
     String termsOfServiceUrl;
-    Contact contact;
+    @Value("${swagger.contact.name}")
+    String contactName;
+    @Value("${swagger.contact.url}")
+    String contactUrl;
+    @Value("${swagger.contact.email}")
+    String contactEmail;
+    @Value("${swagger.license}")
     String license;
+    @Value("${swagger.licenseUrl}")
     String licenseUrl;
-
     @Bean
     public Docket docket(Environment environment) {
         //设置要显示的 Swagger 环境
@@ -46,7 +58,7 @@ public class Knife4jConfig {
         boolean flag = environment.acceptsProfiles(profiles);
         if (flag){
             log.info("当前环境为非生产环境,swagger接口文档允许暴露");
-            log.info("https://localhost:8753/api");
+            log.info("https://localhost:" + port + "/api");
         }
         ParameterBuilder parameterBuilder = new ParameterBuilder();
         List<Parameter> parameters = new ArrayList<Parameter>();
@@ -73,7 +85,7 @@ public class Knife4jConfig {
                 .description(description)
                 .version(version)
                 .termsOfServiceUrl(termsOfServiceUrl)
-                .contact(contact)
+                .contact(new Contact(contactName,contactUrl,contactEmail))
                 .license(license)
                 .licenseUrl(licenseUrl)
                 .build();

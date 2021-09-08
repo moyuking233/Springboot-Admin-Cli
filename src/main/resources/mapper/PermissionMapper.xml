@@ -12,7 +12,6 @@
             <id property="permissionId" column="permission_id" jdbcType="INTEGER"/>
             <result property="permissionUrl" column="permission_url" jdbcType="VARCHAR"/>
             <result property="permissionName" column="permission_name" jdbcType="VARCHAR"/>
-            <result property="permissionParentId" column="permission_parent_id" jdbcType="INTEGER"/>
             <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
             <result property="gmtModifiedMan" column="gmt_modified_man" jdbcType="INTEGER"/>
             <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>

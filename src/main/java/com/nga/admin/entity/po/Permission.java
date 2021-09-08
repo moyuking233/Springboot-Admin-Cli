@@ -33,10 +33,6 @@ public class Permission implements Serializable {
 	 */
 	private String permissionName;
 	/**
-	 * 父权限id
-	 */
-	private Integer permissionParentId;
-	/**
 	 * 最后修改时间
 	 */
 	@TableField(fill = FieldFill.INSERT_UPDATE)
