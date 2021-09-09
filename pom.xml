@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nga</groupId>
-    <artifactId>Springboot-Admin-Security-Single-Server-Cli</artifactId>
+    <artifactId>Springboot-Security-Single-Server-Cli</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!--统一管理jar包版本-->
