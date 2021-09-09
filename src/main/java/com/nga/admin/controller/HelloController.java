@@ -7,8 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class HelloController {
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello(){
         return "hello";
+    }
+
+    @GetMapping("/fuck")
+    public String fuck(){
+        return "fuck";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "权限不足，请前往登录";
     }
 }

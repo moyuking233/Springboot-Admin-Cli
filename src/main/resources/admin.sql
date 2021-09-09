@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50734
  Source Host           : 47.107.61.79:9527
- Source Schema         : beta_msun_wp_admin
+ Source Schema         : admin
 
  Target Server Type    : MySQL
  Target Server Version : 50734
  File Encoding         : 65001
 
- Date: 26/08/2021 12:14:37
+ Date: 09/09/2021 11:15:44
 */
 
 SET NAMES utf8mb4;
@@ -31,13 +31,14 @@ CREATE TABLE `permission`  (
   `gmt_create_man` int(11) NULL DEFAULT NULL COMMENT '创建用户所对应的id',
   `is_deleted` tinyint(1) NULL DEFAULT NULL COMMENT '逻辑删除位',
   PRIMARY KEY (`permission_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of permission
 -- ----------------------------
-INSERT INTO `permission` VALUES (1, '/', '所有', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
-INSERT INTO `permission` VALUES (2, '/**', '基本管理', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
+INSERT INTO `permission` VALUES (1, '/**', '所有', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
+INSERT INTO `permission` VALUES (2, '/hello/**', '基本管理', '2021-06-21 14:52:39', 1, '2021-06-21 14:52:39', 1, 0);
+INSERT INTO `permission` VALUES (3, '/fuck/**', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for role
@@ -77,9 +78,7 @@ CREATE TABLE `role_permission`  (
 -- Records of role_permission
 -- ----------------------------
 INSERT INTO `role_permission` VALUES (1, 1);
-INSERT INTO `role_permission` VALUES (1, 2);
-INSERT INTO `role_permission` VALUES (2, 1);
-INSERT INTO `role_permission` VALUES (2, 2);
+INSERT INTO `role_permission` VALUES (2, 3);
 
 -- ----------------------------
 -- Table structure for user
@@ -119,7 +118,6 @@ CREATE TABLE `user_role`  (
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
-INSERT INTO `user_role` VALUES (1, 1);
 INSERT INTO `user_role` VALUES (1, 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
